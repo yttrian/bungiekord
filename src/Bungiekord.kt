@@ -43,11 +43,7 @@ class Bungiekord(configure: Config.() -> Unit = {}) {
             }
     }
 
-    val config: Config by lazy {
-        val c = Config()
-        c.configure()
-        c
-    }
+    val config = Config().also(configure)
 
     private val client = HttpClient(Jetty) {
         defaultRequest {

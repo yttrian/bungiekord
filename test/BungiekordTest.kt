@@ -19,10 +19,9 @@ class BungiekordTest {
         }
 
         assertFails {
-            val invalid = Bungiekord {
+            Bungiekord {
                 userAgent = "Illegal user agent string"
             }
-            invalid.config // initialize the lazy config
         }
     }
 }
